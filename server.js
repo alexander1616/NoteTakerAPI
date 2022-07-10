@@ -32,7 +32,6 @@ app.get('/', (req, res) => {
 
 // LOGIN
 app.post('/login', (req, res) => {
-    // inputUserName, inputPassword
 })
 
 // LISTEN
@@ -45,7 +44,7 @@ const notesController = require('./controllers/notes_controller')
 app.use('/notes', notesController)
 
 const usereventsController = require('./controllers/events_controller')
-app.use('/userevents', usereventsController)
+app.use('/events', usereventsController)
 
 const usersController = require('./controllers/users_controller')
-app.use('/usertables', usersController)
+app.use('/users', usersController)

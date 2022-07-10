@@ -3,7 +3,6 @@ const events = require('express').Router()
 const db = require('../models')
 const { Events } = db 
 const { Op } = require('sequelize')
-const { user } = require('pg/lib/defaults')
 
 // FIND ALL EVENTS
 events.get('/', async (req, res) => {
@@ -84,7 +83,6 @@ events.delete('/:id', async (req, res) => {
         res.status(500).json(err)
     }
 })
-
 
 // EXPORT
 module.exports = events

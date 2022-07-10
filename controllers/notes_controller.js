@@ -66,6 +66,7 @@ notes.put('/:id', async (req, res) => {
         res.status(500).json(err) 
     }
 })
+
 // DELETE A NOTE
 notes.delete('/:id', async (req, res) => { 
     try {
@@ -81,8 +82,6 @@ notes.delete('/:id', async (req, res) => {
         res.status(500).json(err) 
     }
 })
-
-
 
 // EXPORT
 module.exports = notes

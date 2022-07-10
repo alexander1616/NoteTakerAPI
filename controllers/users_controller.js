@@ -26,7 +26,6 @@ users.get('/:id', async (req, res) => {
     }
 })
 
-
 // SEARCY BY NAME
 users.get('/name/:name', async (req, res) => {
     try {
@@ -68,6 +67,7 @@ users.put('/:id', async (req, res) => {
         res.status(500).json(err)
     }
 })
+
 // DELETE A USER
 users.delete('/:id', async (req, res) => {
     try {
