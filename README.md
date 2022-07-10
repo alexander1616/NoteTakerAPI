@@ -54,42 +54,6 @@ Models for SQL Tables
 | UserTable | Put | 'usertables/:id' | Modifies an existing user |
 | UserTable | Delete | 'usertables/:id' | Deletes an existing user |
 
-### ERD 
-|                                     |         
-| --- |
-| public |
-| UserTables |                                    
-| userId integer |                                
-| userName character varying (255) |              
-| password character varying (255) |.             
-| displayName character varying (255) |          
-                                                  
-|                                     |           
-| --- |                                           
-| public |                                       
-| UserEvents |
-| eventId integer |
-| eventTitle character varying (255) |
-| userId integer |
-| dateCreated timestamp with time zone |
-
-|                                     |
-| --- |
-| public |
-| Notes |
-| noteId integer |
-| eventId integer |
-| noteContent character varying (255) |
-| createdAt timestamp with time zone |
-| updatedAt timestamp with time zone |
-
-|              |
-| --- |
-| public |
-| SequelizeMeta |
-| name character varying (255) |
-
-
 ## Completed Tasks
 | Date | Summary |
 | ---- | ------- |

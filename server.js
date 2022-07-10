@@ -2,7 +2,10 @@
 const express = require('express');
 const app = express();
 const { Sequelize } = require('sequelize');
-//const cors = require("cors");
+const cors = require("cors");
+const notes = require('./controllers/notes_controller');
+const userevents = require('./controllers/userevents_controller');
+const usertable = require('./controllers/usertable_controller');
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
@@ -27,10 +30,10 @@ app.get('/', (req, res) => {
     })
 })
 
-// // LOGIN
-// app.post('/login', (req, res) => {
-//     // inputUserName, inputPassword
-// })
+// LOGIN
+app.post('/login', (req, res) => {
+    // inputUserName, inputPassword
+})
 
 // LISTEN
 app.listen(process.env.PORT, () => {
@@ -38,3 +41,11 @@ app.listen(process.env.PORT, () => {
 })
 
 // CONTROLLERS 
+const notesController = require('./controllers/notes_controller')
+app.use('/notes', notesController)
+
+const usereventsController = require('./controllers/userevents_controller')
+app.use('/userevents', usereventsController)
+
+const usertableController = require('./controllers/usertable_controller')
+app.use('/usertables', usertableController)
