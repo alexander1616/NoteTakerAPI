@@ -10,10 +10,10 @@ const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config); // this utilizes the config file that's generated to create a new sequelize instance.
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
-} // the remaining code makes sure the above code is used with each model file. 
+} 
 
 fs
   .readdirSync(__dirname)
