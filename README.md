@@ -41,18 +41,18 @@ Models for SQL Tables
 | Notes | Put | 'notes/:id' | Modifies an existing note |
 | Notes | Delete | 'notes/:id' | Deletes an existing note |
 | --- | --- | --- | --- |
-| UserEvents | Get | 'userevents/' | Fetches list of events |
-| UserEvents | Get | 'userevents/:id' | Fetches specific events |
-| UserEvents | Get | 'userevents/user/userId' | Fetches events for specific user |
-| UserEvents | Post | 'userevents/' | Creates a new event |
-| UserEvents | Put | 'userevents/:id' | Modifies an existing event |
-| UserEvents | Delete | 'userevents/:id' | Deletes an existing event |
+| Events | Get | 'events/' | Fetches list of events |
+| Events | Get | 'events/:id' | Fetches specific events |
+| Events | Get | 'events/user/userId' | Fetches events for specific user |
+| Events | Post | 'events/' | Creates a new event |
+| Events | Put | 'events/:id' | Modifies an existing event |
+| Events | Delete | 'events/:id' | Deletes an existing event |
 | --- | --- | --- | --- |
-| UserTable | Get | 'usertables/' | Fetches list of users |
-| UserTable | Get | 'usertables/:id' | Fetches specific user |
-| UserTable | Post | 'usertables/' | Creates a new user |
-| UserTable | Put | 'usertables/:id' | Modifies an existing user |
-| UserTable | Delete | 'usertables/:id' | Deletes an existing user |
+| Users | Get | 'users/' | Fetches list of users |
+| Users | Get | 'users/:id' | Fetches specific user |
+| Users | Post | 'users/' | Creates a new user |
+| Users | Put | 'users/:id' | Modifies an existing user |
+| Users | Delete | 'users/:id' | Deletes an existing user |
 
 ## Completed Tasks
 | Date | Summary |
