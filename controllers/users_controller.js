@@ -1,26 +1,26 @@
 // DEPENDENCIES
-const usertable = require('express').Router()
+const users = require('express').Router()
 const db = require('../models')
-const { UserTables } = db 
+const { Users } = db 
 const { Op } = require('sequelize')
 
 // FIND ALL USERS
-usertable.get('/', async (req, res) => {
+users.get('/', async (req, res) => {
     try {
-        const founduserTable = await UserTables.findAll()
-        res.status(200).json(founduserTable)
+        const foundUsers = await Users.findAll()
+        res.status(200).json(foundUsers)
     } catch (error) {
         res.status(500).json(error)
     }
 })
 
 // FIND A SPECIFIC USER
-usertable.get('/:id', async (req, res) => {
+users.get('/:id', async (req, res) => {
     try {
-        const founduserTable = await UserTables.findOne({
+        const foundUsers = await Users.findOne({
             where: { userId: req.params.id }
         })
-        res.status(200).json(founduserTable)
+        res.status(200).json(foundUsers)
     } catch (error) {
         res.status(500).json(error)
     }
@@ -28,9 +28,9 @@ usertable.get('/:id', async (req, res) => {
 
 
 // SEARCY BY NAME
-usertable.get('/name/:name', async (req, res) => {
+users.get('/name/:name', async (req, res) => {
     try {
-        const founduserName = await UserTables.findOne({
+        const founduserName = await Users.findOne({
             where: { userName: req.params.name }
         })
         res.status(200).json(founduserName)
@@ -40,9 +40,9 @@ usertable.get('/name/:name', async (req, res) => {
 })
 
 // CREATE A USER
-usertable.post('/', async (req, res) => {
+users.post('/', async (req, res) => {
     try {
-        const newUser = await UserTables.create(req.body)
+        const newUser = await Users.create(req.body)
         res.status(200).json({
             message: 'Successfully created a new user',
             data: newUser
@@ -54,24 +54,24 @@ usertable.post('/', async (req, res) => {
 })
 
 // UPDATE A USER
-usertable.put('/:id', async (req, res) => {
+users.put('/:id', async (req, res) => {
     try {
-        const updateduserTable = await UserTables.update(req.body, {
+        const updatedUsers = await Users.update(req.body, {
             where: {
                 userId: req.params.id
             }
         })
         res.status(200).json({
-            message: `Successfully updated ${updateduserTable} (s)`
+            message: `Successfully updated ${updatedUsers} (s)`
         })
     } catch(err) {
         res.status(500).json(err)
     }
 })
 // DELETE A USER
-usertable.delete('/:id', async (req, res) => {
+users.delete('/:id', async (req, res) => {
     try {
-        const deletedUser = await UserTables.destroy({
+        const deletedUser = await Users.destroy({
             where: {
                 userId: req.params.id
             }
@@ -85,4 +85,4 @@ usertable.delete('/:id', async (req, res) => {
 })
 
 // EXPORT
-module.exports = usertable
+module.exports = users

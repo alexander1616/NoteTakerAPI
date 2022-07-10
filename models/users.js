@@ -3,15 +3,15 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class UserTables extends Model {
-    static associate({ UserEvents }) {
-      UserTables.hasMany(UserEvents, {
+  class Users extends Model {
+    static associate({ Events }) {
+      Users.hasMany(Events, {
         foreignKey: "eventId",
         as: "event_id"
       })
     }
   }
-  UserTables.init({
+  Users.init({
     userId: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -31,9 +31,9 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {
     sequelize,
-    modelName: 'UserTables',
-    tableName: 'UserTables',
+    modelName: 'Users',
+    tableName: 'Users',
     timestamps: false
   });
-  return UserTables;
+  return Users;
 };

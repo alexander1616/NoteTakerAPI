@@ -1,25 +1,25 @@
 // DEPENDENCIES
-const userevents = require('express').Router()
+const events = require('express').Router()
 const db = require('../models')
-const { UserEvents } = db 
+const { Events } = db 
 const { Op } = require('sequelize')
 const { user } = require('pg/lib/defaults')
 
 // FIND ALL EVENTS
-userevents.get('/', async (req, res) => {
+events.get('/', async (req, res) => {
     try {
-        const founduserEvents = await UserEvents.findAll({
+        const foundEvents = await Events.findAll({
         })
-        res.status(200).json(founduserEvents)
+        res.status(200).json(foundEvents)
     } catch (error) {
         res.status(500).json(error)
     }
 })
 
 // FIND ALL EVENTS FOR USER
-userevents.get('/user/:userId', async (req,res) => {
+events.get('/user/:userId', async (req,res) => {
     try {
-        const foundspecificEvents = await UserEvents.findAll({
+        const foundspecificEvents = await Events.findAll({
             where: { userId: req.params.userId }
         })
         res.status(200).json(foundspecificEvents)
@@ -29,24 +29,24 @@ userevents.get('/user/:userId', async (req,res) => {
 })
 
 // FIND A SPECIFIC EVENT
-userevents.get('/:id', async (req, res) => {
+events.get('/:id', async (req, res) => {
     try {
-        const founduserEvent = await UserEvents.findOne({
+        const foundEvent = await Events.findOne({
             where: { eventId: req.params.id }
         })
-        res.status(200).json(founduserEvent)
+        res.status(200).json(foundEvent)
     } catch (error) {
         res.status(500).json(error)
     }
 })
 
 // CREATE AN EVENT
-userevents.post('/', async (req, res) => {
+events.post('/', async (req, res) => {
     try {
-        const newuserEvent = await UserEvents.create(req.body)
+        const newEvent = await Events.create(req.body)
         res.status(200).json({
             message: 'Successfully created a new event',
-            data: newuserEvent
+            data: newEvent
         })
     } catch(err) {
         res.status(500).json(err)
@@ -54,15 +54,15 @@ userevents.post('/', async (req, res) => {
 })
 
 // UPDATE AN EVENT
-userevents.put('/:id', async (req, res) => {
+events.put('/:id', async (req, res) => {
     try {
-        const updateuserEvents = await UserEvents.update(req.body, {
+        const updateEvents = await Events.update(req.body, {
             where: {
                 eventId: req.params.id
             }
         })
         res.status(200).json({
-            message: `Successfully updated ${updateuserEvents} (s)`
+            message: `Successfully updated ${updateEvents} (s)`
         })
     } catch(err) {
         res.status(500).json(err)
@@ -70,15 +70,15 @@ userevents.put('/:id', async (req, res) => {
 })
 
 // DELETE AN EVENT
-userevents.delete('/:id', async (req, res) => {
+events.delete('/:id', async (req, res) => {
     try {
-        const deleteduserEvent = await UserEvents.destroy({
+        const deletedEvent = await Events.destroy({
             where: {
                 eventId: req.params.id
             }
         })
         res.status(200).json({
-            message: `Successfully deleted ${deleteduserEvent} (s)`
+            message: `Successfully deleted ${deletedEvent} (s)`
         })
     } catch(err) {
         res.status(500).json(err)
@@ -87,4 +87,4 @@ userevents.delete('/:id', async (req, res) => {
 
 
 // EXPORT
-module.exports = userevents
+module.exports = events

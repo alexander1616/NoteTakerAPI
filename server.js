@@ -4,8 +4,8 @@ const app = express();
 const { Sequelize } = require('sequelize');
 const cors = require("cors");
 const notes = require('./controllers/notes_controller');
-const userevents = require('./controllers/userevents_controller');
-const usertable = require('./controllers/usertable_controller');
+const events = require('./controllers/events_controller');
+const users = require('./controllers/users_controller');
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
@@ -44,8 +44,8 @@ app.listen(process.env.PORT, () => {
 const notesController = require('./controllers/notes_controller')
 app.use('/notes', notesController)
 
-const usereventsController = require('./controllers/userevents_controller')
+const usereventsController = require('./controllers/events_controller')
 app.use('/userevents', usereventsController)
 
-const usertableController = require('./controllers/usertable_controller')
+const usertableController = require('./controllers/table_controller')
 app.use('/usertables', usertableController)
