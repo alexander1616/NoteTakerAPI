@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      binderId: {
+      eventId: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

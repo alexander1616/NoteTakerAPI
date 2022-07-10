@@ -47,5 +47,5 @@ app.use('/notes', notesController)
 const usereventsController = require('./controllers/events_controller')
 app.use('/userevents', usereventsController)
 
-const usertableController = require('./controllers/table_controller')
-app.use('/usertables', usertableController)
+const usersController = require('./controllers/users_controller')
+app.use('/usertables', usersController)
