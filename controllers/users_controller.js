@@ -41,12 +41,12 @@ users.get('/name/:name', async (req, res) => {
 // CREATE A USER
 users.post('/', async (req, res) => {
     try {
+        console.log(req.body);
         const newUser = await Users.create(req.body)
         res.status(200).json({
             message: 'Successfully created a new user',
             data: newUser
-        });
-        console.log(req.body);
+        });     
     } catch(err) {
         res.status(500).json(err)
     }
