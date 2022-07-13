@@ -1,0 +1,1146 @@
+{
+	"info": {
+		"_postman_id": "79ccc7aa-d0db-4c93-97a5-ea2c62fb7245",
+		"name": "Note Taker API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20745015"
+	},
+	"item": [
+		{
+			"name": "LocalHost",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get All Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": 1,\r\n    \"userName\": \"testdelete\",\r\n    \"password\": \"testdelete\",\r\n    \"displayName\": \"delete\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create a User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"userId\": 0,\r\n    \"userName\": \"alex\",\r\n    \"password\": \"alex\",\r\n    \"displayName\": \"alex\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/users/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"users",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "122"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"7a-fL4O5sMa7PWNHA8GbYaZ6iyTdwU\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 10 Jul 2022 17:08:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully created a new user\",\n    \"data\": {\n        \"userId\": 0,\n        \"userName\": \"alex\",\n        \"password\": \"alex\",\n        \"displayName\": \"alex\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Find a Specific User by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/:userId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Find a Specific User by ID",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/users/0",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"users",
+												"0"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "69"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"45-JUlxeEbjfr2cgSVx/I7d4nRfLFk\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Jul 2022 00:56:30 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"userId\": 0,\n    \"userName\": \"alex\",\n    \"password\": \"alex\",\n    \"displayName\": \"alex\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a User",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userId\": 0,\r\n        \"userName\": \"alex\",\r\n        \"password\": \"alex\",\r\n        \"displayName\": \"alexUpdate\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/users/0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"0"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update a User",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"userId\": 0,\r\n        \"userName\": \"alex\",\r\n        \"password\": \"alex\",\r\n        \"displayName\": \"alexUpdate\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/users/:id",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "40"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"28-HxEiW539t5AstuKN4L8v2nL+gks\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Jul 2022 00:59:35 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully updated 1 (s)\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Find a Specific User by Name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/name/:name",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"name",
+										":name"
+									],
+									"variable": [
+										{
+											"key": "name",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Find a Specific User by Name",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/users/name/alex",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"users",
+												"name",
+												"alex"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "69"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"45-JUlxeEbjfr2cgSVx/I7d4nRfLFk\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Jul 2022 00:57:58 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"userId\": 0,\n    \"userName\": \"alex\",\n    \"password\": \"alex\",\n    \"displayName\": \"alex\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a User by ID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/users/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete a User by ID",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/users/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"users",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "44"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2c-LqSvKrBeQXEExMpTxkkiHzhm91s\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Jul 2022 01:02:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully deleted 1 user(s)\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Events",
+					"item": [
+						{
+							"name": "Get All Events",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/events/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"events",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Events for a User",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "Get All Events for a User",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/events/user/0",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"events",
+												"user",
+												"0"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "94"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"5e-zi60CN1rv+KmxHpt3gq6ZOeL1Do\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Jul 2022 01:12:23 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"eventId\": 0,\n        \"eventTitle\": \"first event\",\n        \"userId\": 0,\n        \"dateCreated\": \"2005-11-04T17:00:00.000Z\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Find a Specific Event",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "Find a Specific Event",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/events/0",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"events",
+												"0"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "92"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"5c-TUPbpXcwqgB7CoeFa67GLozQKIo\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Jul 2022 01:12:37 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"eventId\": 0,\n    \"eventTitle\": \"first event\",\n    \"userId\": 0,\n    \"dateCreated\": \"2005-11-04T17:00:00.000Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create a New Event",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"eventId\": 0,\r\n    \"eventTitle\": \"first event\",\r\n    \"userId\": \"0\",\r\n    \"dateCreated\": \"2005-11-04T12:00:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/events/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"events",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create a New Event",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"eventId\": 0,\r\n    \"eventTitle\": \"first event\",\r\n    \"userId\": \"0\",\r\n    \"dateCreated\": \"2005-11-04T12:00:00\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/events/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"events",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "146"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"92-vR8FLmU5tpyu55AahA2Eq3kJ4b8\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Jul 2022 01:11:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully created a new event\",\n    \"data\": {\n        \"eventId\": 0,\n        \"eventTitle\": \"first event\",\n        \"userId\": 0,\n        \"dateCreated\": \"2005-11-04T17:00:00.000Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update an Event",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/events/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update an Event",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"eventId\": 2,\r\n    \"eventTitle\": \"third event with update\",\r\n    \"userId\": 0,\r\n    \"dateCreated\": \"2005-11-04T17:00:00.000Z\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/events/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"events",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "40"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"28-HxEiW539t5AstuKN4L8v2nL+gks\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Jul 2022 01:16:20 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully updated 1 (s)\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete an Event",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/events/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"events",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete an Event",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/events/:id",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"events",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": null
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "40"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"28-wmkavAOOvqVXBUHI2hQVvstWJVY\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Jul 2022 01:17:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully deleted 1 (s)\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Notes",
+					"item": [
+						{
+							"name": "Get All Notes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/notes/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"notes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Notes for a Specific User",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get a Specific Note",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/notes/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"notes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Note",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/notes/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"notes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create a Note",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"noteId\": 0,\r\n    \"eventId\": 0,\r\n    \"noteContent\": \"Hello this is my first note!\",\r\n    \"createdAt\":  \"2005-11-04T17:00:00.000Z\",\r\n    \"updatedAt\": \"2005-11-04T17:00:00.000Z\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/notes/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"notes",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "201"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"c9-boNzcGE7czIhDEeTWhkV8Yvq6xg\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Jul 2022 01:22:10 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully inserted a new note\",\n    \"data\": {\n        \"noteId\": 0,\n        \"eventId\": 0,\n        \"noteContent\": \"Hello this is my first note!\",\n        \"createdAt\": \"2005-11-04T17:00:00.000Z\",\n        \"updatedAt\": \"2005-11-04T17:00:00.000Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a Note",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "Update a Note",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"noteId\": 2,\r\n    \"eventId\": 3,\r\n    \"noteContent\": \"Hello this is my third  note! in second event and it's updated\",\r\n    \"createdAt\":  \"2005-11-04T17:00:00.000Z\",\r\n    \"updatedAt\": \"2005-11-04T17:00:00.000Z\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/notes/3",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"notes",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "44"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2c-Nk5OqS/oWxvoqORzPfzDgyTEX/o\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Jul 2022 01:24:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Successfully updated 0 note(s)\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a Note",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/notes/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"notes",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

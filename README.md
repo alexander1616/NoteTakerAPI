@@ -57,7 +57,7 @@ Models for SQL Tables
 ## Completed Tasks
 | Date | Summary |
 | ---- | ------- |
-| July 5, 2022 | ReadMe file, Initial Commit. |
+| July 5, 2022 | ReadMe file, Initial Commit |
 | July 7, 2022 | Controllers, Models, Database |
-
+| July 10, 2022 | Finished Endpoints, Backend Server Up, Login Authentication |
 
