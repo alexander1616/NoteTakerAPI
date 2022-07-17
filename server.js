@@ -7,7 +7,7 @@ const notes = require('./controllers/notes_controller');
 const events = require('./controllers/events_controller');
 const users = require('./controllers/users_controller');
 const authentication = require('./controllers/authentication')
-const cookieSession = require('cookie-session')
+//const cookieSession = require('cookie-session')
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
@@ -16,13 +16,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({
     origin: 'http://localhost:3000',
-    credentials: true
+    //credentials: true
 }));
-app.use(cookieSession({
-    name: 'session',
-    keys: [ process.env.SESSION_SECRET ],
-    maxAge: 24 * 60 * 60 * 1000 // 24 hours
-}));
+// app.use(cookieSession({
+//     name: 'session',
+//     keys: [ process.env.SESSION_SECRET ],
+//     maxAge: 24 * 60 * 60 * 1000 // 24 hours
+// }));
 
 // // SEQUELIZE CONNECTION
 // const sequelize = new Sequelize(process.env.PG_URI)
