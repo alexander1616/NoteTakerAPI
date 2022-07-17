@@ -14,6 +14,10 @@ Interactive to-do lists with a single or multiple users, shared chatrooms to pla
 
 Bill splitting application.
 
+### Technologies
+
+React, Node, Express, SQL, CSS
+
 ## Data Models
 
 Models for SQL Tables
@@ -61,3 +65,5 @@ Models for SQL Tables
 | July 7, 2022 | Controllers, Models, Database |
 | July 10, 2022 | Finished Endpoints, Backend Server Up, Login Authentication |
 
+## To dos
+Session / Role based authentication
