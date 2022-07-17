@@ -42,7 +42,11 @@ users.get('/name/:name', async (req, res) => {
 users.post('/', async (req, res) => {
     try {
         console.log(req.body);
-        const newUser = await Users.create(req.body)
+        let { password, ...rest } = req.body;
+        const newUser = await Users.create({
+            ...rest,
+            passwordDigest: await bcrypt.hash(password, 12)
+        })
         res.status(200).json({
             message: 'Successfully created a new user',
             data: newUser

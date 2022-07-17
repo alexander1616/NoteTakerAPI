@@ -6,6 +6,7 @@ const cors = require("cors");
 const notes = require('./controllers/notes_controller');
 const events = require('./controllers/events_controller');
 const users = require('./controllers/users_controller');
+const authentication = require('./controllers/authentication')
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
@@ -48,3 +49,6 @@ app.use('/events', usereventsController)
 
 const usersController = require('./controllers/users_controller')
 app.use('/users', usersController)
+
+const authenticationController = require('./controllers/authentication')
+app.use ('/authentication', require('./controllers/authentication'))
